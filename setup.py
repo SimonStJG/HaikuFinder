@@ -11,5 +11,5 @@ setup(
     author_email='Simon.StJG@gmail.com',
     # url='http://www.SimonStJG.org/',
     packages=['haikufinder'],
-    install_requires=['nltk']
+    install_requires=['nltk', 'cached_property']
     )
