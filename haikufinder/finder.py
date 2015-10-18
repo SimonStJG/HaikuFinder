@@ -9,7 +9,14 @@ from functools import reduce
 from cached_property import cached_property
 
 logger = logging.getLogger(__name__)
-cmu_dictionary = nltk.corpus.cmudict.dict()
+
+try:
+    cmu_dictionary = nltk.corpus.cmudict.dict()
+except LookupError:
+    if not nltk.download("cmudict"):
+        raise Exception("Failed to download cmudict")
+    cmu_dictionary = nltk.corpus.cmudict.dict()
+
 PUNCTUATION = [".", "!", "(", ")", ":", ",", "?", ";"]
 
 
