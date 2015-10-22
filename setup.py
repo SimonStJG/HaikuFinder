@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name='haiku-finder',
-    version='0.1',
+    version='0.0.1',  # Also appears in haikufinder/__init__.py
     description='Haiku Finder',
     author='Simon StJG',
     author_email='Simon.StJG@gmail.com',
