@@ -22,6 +22,11 @@ class TestHaikuFinder(unittest.TestCase):
     def setUp(self):
         self.haiku_finder = HaikuFinder()
 
+    def test_paragraphs(self):
+        self.assertEqual(
+            self.haiku_finder.find_haiku("{}\n{}".format(HAIKU, HAIKU)),
+            [HAIKU] * 2)
+
     def test_no_haiku(self):
         self.assertEqual(self.haiku_finder.find_haiku(
             SEVEN_SYLLABLE_SENTENCE + UNKNOWN_WORD),
